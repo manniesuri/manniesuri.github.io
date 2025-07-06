@@ -2671,14 +2671,12 @@ input, select, textarea {
 		display: flex;
 	}
 
-		.spotlight .image {
-			-moz-order: 1;
-			-webkit-order: 1;
-			-ms-order: 1;
-			order: 1;
-			border-radius: 0;
-			width: 40%;
-		}
+			.spotlight .image {
+				position: relative;
+				width: 40%;
+				max-width: 100%; /* Ensures images stay contained */
+				overflow: hidden;
+			}
 
 			.spotlight .image img {
 				border-radius: 0;
@@ -3453,6 +3451,15 @@ input, select, textarea {
 		top: 0;
 		width: 100%;
 		z-index: 10000;
+	}
+	/* Mobile Header Fix (Add this after #header block) */
+	#header h1 {
+	    padding-right: 2em; /* Prevents menu toggle overlap */
+	}
+	@media screen and (max-width: 360px) {
+	    #header h1 {
+		font-size: 0.8em; /* Shrink text on tiny screens */
+	    }
 	}
 
 		#header h1 {
